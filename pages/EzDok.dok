@@ -306,7 +306,7 @@ that contains all of the content in your site in a human readable and easily scr
 # Dependencies
 
 - ### [Marked 11.0.0](https://marked.js.org/)
-- ### [TailwindCSS + Typography plugin](https://tailwindcss.com/)
+- ### [TailwindCSS + Typography plugin](https://tailwindcss.com/) (compile this with build-tailwind.sh)
 - ### [Flowbite 2.2.0](https://flowbite.com)
 
 @@ Globals
