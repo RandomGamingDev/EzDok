@@ -257,6 +257,60 @@ Want to know how to use all the different features of EzDok? [You can learn how 
     (I recommend using a text editor that makes invisible spaces and things like that visibile 
     even if you don't plan on doing that since some people like to troll with invisible characters and character look-alikes).
 
+@@ Creating Interactive Content
+~
+    "libraries": ["https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"],
+    "scripts": ["/pages/js/interactive-content-example.js"]
+~
+# Creating Interactive Content
+## Using Javascript
+
+Interactivity on a documentation website is something that's very powerful and 
+can help greatly with encouraging people to use your project and helping them to better understand it <br/>
+Here's a demonstration of that using p5.js:
+<div id="interactive-javascript-example"></div>
+
+This code utilizes atan2 to get the angle from the origin to the mouse and then uses sine and cosine to calculate where the circle goes. <br/>
+That text is a mouthful and quite hard to understand on its own, especially compared to just pointing out the different parts of the visuals isn't it? <br/>
+Sadly, many other documentation solutions like Github Wiki miss this feature by giving up javascript and iframes which is part of why you should use EzDok.
+
+Here's how the javascript library (p5) and script were imported:
+```
+​@@ Creating Interactive Content
+~
+    "libraries": ["https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"],
+    "scripts": ["/EzDok/pages/js/interactive-content-example.js"]
+~
+```
+Note: Make sure to design your scripts so that they don't throw errors when executed multiple times due to things like redeclaring variables 
+through things like using `var` instead of `let` since you're allowed to redeclare `var` as many times as you'd like and 
+keeping variables that don't need to be public, private.
+
+## Using iframes
+Another feature that a lot of documentation solutions are sadly missing is the iframe. <br/>
+iframes in EzDok can provide for great interactive content through its ability to peek into other sites and utilize their features from EzDok
+
+<br/>
+
+### One major example of the use of iframes are Youtube embeds which are quite useful and important on the internet:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=yGbxeFsQrv6bQiij" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br/>
+
+### You can also use it for things like embedding Desmos graphs
+<iframe src="https://www.desmos.com/calculator/eiezyoqjw9" width="1000" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+
+<br/>
+
+### Interactable Code Editors:
+<iframe src="https://editor.p5js.org/PotatoBoy/full/WL2gqv_hf" width="1000" height="500"></iframe>
+
+<br/><br/>
+
+# and much, much more!
+
+<br/>
+
 @@ Checking for errors
 # Checking for errors
 ### Note: All errors are reported in console <br/><br/>
