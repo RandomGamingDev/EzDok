@@ -1,8 +1,3 @@
-// Tailwind Config
-tailwind.config = {
-    darkMode: 'class',
-}
-
 // Get the different icons
 const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
