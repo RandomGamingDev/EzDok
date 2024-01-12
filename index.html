@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple site for easy documentation :D">
+    <meta name="keywords" content="Documentation, Code, Coding, Programming">
+    <meta name="author" content="RandomGamingDev">
+
+    <link id="icon" rel="icon" href="icon.jpg" type="image/x-icon">
+    <title id="title">EzDok</title>
+
+    <!--Libraries-->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.0.0/marked.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet"/>
+
+    <!--Custom Styling-->
+    <link rel="stylesheet" href="index.css">
+
+    <!--Dynamically Linked Libraries Go Here-->
+  </head>
+
+  <body class="bg=white dark:bg-slate-900">
+    <!--Sidebar Maximizer-->
+    <button data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar" aria-controls="separator-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+      <span class="sr-only">Open sidebar</span>
+      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+      </svg>
+    </button>
+    
+    <!--Sidebar-->
+    <aside id="separator-sidebar" class="fixed top-0 left-0 z-40 w-96 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+      <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <!--Logo, Title, & Short Description-->
+        <a class="flex items-center ps-2.5 mb-5">
+          <img id="sidebar-icon" src="icon.jpg" class="h-9 me-3 pb-1" alt="Flowbite Logo"/>
+          <div class="flex flex-col">
+            <span id="sidebar-title" class="left-0 text-xl font-semibold whitespace-nowrap dark:text-white"></span>
+            <span id="sidebar-description" class="self-center text-xs font-normal dark:text-white"></span>
+          </div>
+        </a>
+
+        <!--Search Bar-->
+        <form onsubmit="Search()">
+          <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+          <div class="relative">
+              <!--Search Icon/Button-->
+              <button type="submit" class="absolute px-3" style="padding-top: 0.7rem; padding-bottom: 0.7rem">
+                  <svg class="w-4 h-3 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                  </svg>
+              </button>
+
+              <!--Search Input-->
+              <input type="search" id="default-search" onkeyup="SearchTyped()" onchange="SearchTyped()" class="block h-3 w-full p-4 ps-9 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+
+              <!--Clear-->
+              <button id="clear-search-button" type="button" onclick="ClearSearch()" class="absolute end-2.5 bottom-2.5 focus:outline-none px-4 py-3.5 text-gray-500 dark:text-gray-400 fill-slate-400 hidden">
+                <svg focusable="false" class="absolute w-4 h-3 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                </svg>
+              </button>
+          </div>
+        </form>
+
+        <!--Search Results-->
+        <div id="search-results-container" class="pt-2 hidden">
+            <div id="search-results" class="search-results-open min-w-full h-64 dark:text-white rounded-lg p-4 overflow-scroll outline outline-1 bg-gray-100 outline-gray-200 dark:outline-gray-700 dark:bg-gray-900">
+                <p>Hello, World!</p>
+            </div>
+        </div>
+
+        <!--Sections-->
+        <ul id="sections-container" class="space-y-2 font-medium pt-4">
+      </div>
+    </aside>
+
+    <!--Light Mode Toggle-->
+    <div class="p-3 float-right">
+      <button id="theme-toggle" type="button" onclick="LightModeToggle()" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2">
+        <span class="sr-only">Light Mode Toggle</span>
+        <svg id="theme-toggle-dark-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      </button>
+    </div>
+
+    <main>
+      <div class="p-4 sm:ml-96">
+        <!--Where the documentation's text goes-->
+        <article id="content" class="prose prose-slate dark:prose-invert min-w-full p-4">
+          <!--If javascript isn't enabled-->
+          <noscript>
+            <div style="display: flex;">
+              <div style="padding-left: 32rem"></div>
+              <div style="text-align: center;">
+                <h2 style="padding-top: 10%; font-size: 32px;">
+                  Sadly, this EzDok doesn't have support for browsers with Javascript disabled. <br/>
+                  However, you can still access the documentation through a human readable format!
+                </h2>
+                <p style="padding-bottom: 100%;">
+                  If you'd like to access the documentation without enabling javascript paste the url in quotations behind the # into the search bar to get access to the raw documentation file
+                </p>
+              </div>
+            </div>
+          </noscript>
+        </article>
+      </div>
+    </main>
+  </body>
+
+  <!--Code-->
+  <script src="js/section.js"></script>
+  <script src="js/globals.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/light-mode-toggle.js"></script>
+  <script src="js/event-listener.js"></script>
+
+  <!--Libraries-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+</html>

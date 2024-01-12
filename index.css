@@ -1,0 +1,16 @@
+@keyframes search-results-open {
+    from {
+        height: 0rem;
+        opacity: 0%;
+    }
+    to {
+        height: 16rem;
+        opacity: 100%;
+    }
+}
+
+.search-results-open {
+    opacity: 100%;
+    animation-name: search-results-open;
+    animation-duration: 1s;
+}

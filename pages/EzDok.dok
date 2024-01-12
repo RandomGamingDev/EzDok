@@ -1,0 +1,420 @@
+~
+"icon": "icon.jpg",
+"title": "EzDok",
+"description": "A powerful & databaseless ez documentation solution"
+~
+
+@ Welcome!
+
+@@ Welcome to EzDok!
+# Welcome to EzDok!
+<img src="/icon.jpg" alt="EzDok" width="300"/>
+
+## What is EzDok?
+EzDok is a powerful & databaseless documentation solution
+that solves many of the issues that plague modern documentation sites.
+If you'd like to learn more about EzDok's advantages compared to other sites 
+[you can check them out here!](/#v1/"pages/EzDok.dok"/1/)
+
+## How can I start?
+It's simple & ez! Check out the 
+[quickstart](/#v1/"pages/EzDok.dok"/2/0/) 
+and 
+[syntax](/#v1/"pages/EzDok.dok"/2/1/) 
+sections for more information,
+but all you have to do is create a dok file,
+host it somewhere and generate a URL to point to it to document your code!
+
+@@ Why you should use EzDok
+# Why you should use EzDok
+- ### Easy & Out of Box Solution
+    - Documentation with EzDok **doesn't require installing or forking anything** and 
+        is as easy as creating a .dok text file, uploading it to a site like Github, and generating an EzDok URL that points to it!
+    - This makes **EzDok's ease of use on par with that of Github Wiki** which is one of, if not the current easiest documentation solution
+        **while having features on par with those of much harder to set up solutions**!
+    - Complex custom text formatting and features are also much simpler since **EzDok uses Markdown** 
+        and has an easy config based solution for **loading custom scripts for anything complex** like realtime visuals and demos!
+    - We also support **mobile, light & dark mode, and searching** for you! Adding **SEO (Search Engine Optimization) is also easy** with EzDok 
+    (how you can do it will be explained in the **Easy to SEO (Search Engine Optimization) for** bullet point) and just requires forking 
+    the repository to start adding it!
+- ### Updates with your Code and Version Control
+    - EzDok, because of its ability to work off of just .dok for all its features means that **EzDok can look at the documentation at any
+        point in the history of your project** (for instance, by pointing EzDok towards the dok from an older version of your github repo)
+        as well as **provide a live view into the current documentation** **without having to update the
+        main documentation for the production version of your code** **which is a feature that most other documentation solutions lack**.
+- ### No Backend Required
+    - EzDok is a static site that doesn't require a backend which means that you can **host EzDok practically anywhere for FREE!**
+        and means a **much lighter load** on the web server dealing with requests **even if your project scales up to the millions**!
+    - Also, **lets be honest**, dealing with over complicated code comment parsing solutions for documentation like with npm, 
+        or a custom solution with a separate front end, and back end or tons of separate HTML files is **very annoying to deal with**
+        for something storing that's **99% text + a few other features**!
+    - EzDok **solves this by just having no backend and using a separate type of file (.dok) that's human readable format**. 
+        Everything can be easily managed from your favorite IDE or text editor 
+        instead of messing with over complicated code comment documentation solutions like what you'd find with npm, or a custom solution.
+        And, despite having no backend **EzDok manages to be much more performant than than other documentation solutions** 
+        through its dynamic documentation tree datastructure and JIT (Just In Time) compilation of the .dok documentation!
+        All of this is while still being **highly accessible to those who have javascript disabled** 
+        because of the fact that .dok files are made to be **human readable** 
+        which is a feature that doesn't exist for many documentation solutions, 
+        **even large ones like those for [p5.js](https://p5js.org/reference/) & [three.js](https://threejs.org/)!**
+- ### Avoid Cluttering your Code
+    - One of the **most popular solutions** that many have chosen is to **insert a bunch of comments everywhere in their code**
+        before parsing it into a documentation site like using one fo the over complicated solutions I mentioned before. 
+        However, **this results in a big issue**, which is **horridly cluttered code
+        [that even large well established libraries like p5.js aren't immune to](https://github.com/processing/p5.js/blob/f79d312b7cc3a3e0f2df188bc5b6de0f6585fa77/src/math/trigonometry.js).**
+        The example just shown **has more documentation comments than actual code** 
+        which makes scrolling through for development **hell** for those who dislike this **excessive** scrolling (nearly everyone).
+        However, **despite these flaws, this form of documentation oftentimes has to be chosen for the live updating documentation** 
+        since **you'd otherwise be forced to recompile the documentation every single time you wanted to access something** 
+        which is **even worse**.
+    - EzDok, as talked about in the **No Backend Required** bullet point, **instead of choosing the lesser of 2 evils**, **updates dynamically with your code** 
+        **solving both the clutter issue, as well as the issue of needing real time documentation for the different versions of your code**,
+        which helps to preserve the pristine quality of your code of the sanities of contributors.
+- ### Made to be forked
+    - Because of the fact that EzDok **doesn't use a backend** and 
+        **just uses frontend functions to create a dynamic, malleable, fast, and easy queryable local documentation tree** 
+        for managing the documentation of the site.
+        All of this means that its **easy to make changes** to EzDok since it's a single codebase that's easy for everyone to understand! 
+        **In fact, you're encouraged to fork EzDok** if you'd like to modify it!
+        Basically, compared to other documentation solutions EzDok truly gives you **full control** over your documentation.
+- ### Optimized for the ultimate developer experience
+    - Something that oftentimes irritates me a bit are things like the **constant refreshing** of documentation sites **whenever you do anything**
+        and when I'm on the train, where the internet sometimes cuts off and the site, 
+        **instead of caching the other pages, tries to query for them right as I click on them** 
+        **which makes documentation an absolute pain to access,** 
+        which I imagine must be **even more painful for those living in areas where the internet is rare and sparse**
+        since I suddenly can't even look at **even just the next page of the documentation**. 
+    - These things **are all solved by EzDok**. The constant refreshing from page swaps is replaced with `pushState()` 
+        which means **no constant refreshes** and a clean and smooth experience. 
+        The issue of pages not getting cached is solved since **EzDok queries for all the dok files as soon as the website's initialized**, 
+        **which it doesn't have to redo every time you move to another page** since the site doesn't reload for page changes in the first place, 
+        **meaning that the site will continue to work even if your internet connection is cut off in the middle**. 
+        **This works for even massive amounts of documentation** since **all that's getting stored is text**, 
+        with the **scripts and images getting loaded dynamically** since they aren't as important and since it's more performant.
+        And, in case you're still concerned about loading in everything at once, **the Bible is 4-5MB** and **this image of a banana**
+        <img src="/pages/assets/imgs/2.4MB_Banana.png" alt="a 2.4MB image of a banana" width="200"/>
+
+        is **2.4MB**.
+        If your documentation **is so large that its text is longer than that of a Bible multiple times over**, 
+        **so much so that loading that data is too slow in an age where an image of bananas that instantly loads is 2.4MB**
+        then **it's probably an issue with your documentation rather than your documentation solution**.
+- ### Interactivity and its Power as a Feature
+    - Many solutions such as Github Wiki **don't have** features like scripts (javascript) and iframes, 
+        which means **no interactive content**. 
+        While **this might not seem that bad** considering the fact that most documentation is just text 
+        **the ability to add interactive sections isn't a feature to be scoffed at**. 
+        Having interactive solutions means **more interesting and educational visuals that can better interest and help users** to understand your project 
+        since **they'll be able to try out or see your project in action in their browser** **before downloading anything** 
+        which acts as a **major motivator**. 
+        This isn't even mentioning how you can **use this for debugging** since, especially with JS projects, 
+        **you'll then be able to run the unit tests on their machine**, 
+        which means that **they can easily document any issues on their end and with any browser without needing to manually install anything**.
+- ### Easy to SEO (Search Engine Optimization) for
+    - Now, **the fact that everything is dynamically loaded and compiled with javascript might worry you**, 
+        since **web scrapers used for search engines like Google don't execute JS** and thus **won't see the content when indexing your page**.
+        **However, you don't have to worry** about that since **you can easily optimize for search engines** 
+        simply by forking EzDok, **changing the meta tags of the site** and 
+        **creating an element** (a `<p>` element for instance) **that contains part of your documentation **
+        (you can copy the content from the parent .dok file) in `<p>` and **then hide it** by importing a javascript library using EzDok's library loading feature. 
+        That way web scrapers **can still read the content** and **we can still optimize for SEO!**
+
+@ How to use EzDok
+
+@@ Quickstart
+~
+"scripts": ["/pages/js/generate_url.js"]
+~
+# Quickstart
+## Create the dok file
+Here's a template so that you can try out EzDok before you learn the basic Markdown-like syntax
+
+```md
+~
+"icon": "icon.jpg",
+"title": "EzDok",
+"description": "A powerful & databaseless ez documentation solution"
+~
+
+​@ EzDok Template
+# Welcome to the EzDok Template!
+## Wanna play Rock, Paper, Scissors with me?
+
+​@ Rock, Paper, Scissors
+
+​@@ Rock
+# I chose paper. Maybe next time?
+
+​@@ Paper
+# I chose scissors. Maybe next time?
+
+​@@ Scissors
+# I chose rock. Maybe next time?
+```
+
+Just copy this into a text file of your choosing!
+
+## Upload the dok file
+
+In order for the EzDok site to access the documentation, it's gonna have to be on the internet! <br/>
+While there are many places you can store your documentation, 
+**I recommend storing it alongside your code in your version manager** so you can see the documentation for any version of your code 
+and utilize EzDok's best features! Also, remember that EzDok isn't you and thus can't access private files locked behind a login. 
+If you'd like local/private documentation you'll have to host EzDok using an http server (I use `python3 -m http.server` which you can search up how to use) 
+before simply placing the .dok file in the same or a child directory of the directory EzDok's `index.html` is in.<br/>
+After uploading your text file, get the URL to the **raw text file** since that's what EzDok will use for documentation. <br/>
+
+For example, on Github which doesn't give you the raw file by default, so you have to click on the `Raw` button
+<img src="/pages/assets/imgs/github-get-raw-file.png" alt="How to get the raw file from Github" width="1000"/>
+
+to get sent to the raw version of the text file which should look like this which should be true for all raw text files although the color scheme can differ:
+<img src="/pages/assets/imgs/github-raw-file.png" alt="The raw file" width="500"/>
+
+then all you have to do is get the URL to it (if you're using github the raw file's URL should start with `https://raw.githubusercontent.com/`) and then generate a URL.
+
+## Generating the URL
+
+You can now easily generate the URL using this URL generator, although you can easily do it by hand if you'd like to too. <br/>
+Generating the URL is as simple as entering in the parameters and copying the URL from `EzDok URL: ` 
+(you can disregard path for now & there's also only 1 version of the API right now)
+
+<div id="ezdok-url-generator"></div>
+
+@@ Syntax/Operators
+# Syntax/Operators
+
+- ### Markdown
+    EzDok uses Markdown since it's light, portable, and a human readable format for document formatting. 
+    If you don't know how to use Markdown you can look at the documentation (here)[https://www.markdownguide.org/getting-started/]
+- ### Section @
+    @ declares a section when its on the start of a line with nothing in front of it, and, 
+    if the section is empty you're expected to create an empty line before creating to the next section or the file ending like this:
+    ```md
+    @ My ID is 1 and I'm a Section and I belong to the tree's root!
+
+    @@ My ID is 2 and I'm a Subsection and I belong to the Section (1) above me!
+
+    @@@ My ID is 3 and I'm a Subsubsection and I belong to the Subsection (2) above me!
+
+    @@@ My ID is 4 and I'm also a Subsubsection and I belong to the Subsection (2) above me!
+
+    @@ My ID is 5 and I'm also a Subsection and I belong to the Section (1) above me!
+
+    ```
+    Here's the visual version of the tree generated by that:
+    <img src="/pages/assets/imgs/section-tree-example.png" alt="A visual representation of the tree" width="500"/>
+
+
+    As you can see, the number of @s declares how deep in the tree the section is. 
+    Sections with less @s which are closer to the top of the tree and thus being more important sections while 
+    sections with more @s are deeper in the tree and are more specific subsections. 
+    Subsections are children to the last declared section that's higher by 1 in the tree, 
+    with sections that have 1 @ being children to the root element of the tree.
+
+    Something else to note is that, sections that have subsections cannot be directly clicked on to show their content or use their config since they turn into dropdowns. <br/>
+    Instead, their content and config are inherited by all their child subsections (multiple layers down too!). 
+    The content is placed on top, which alongside the config is perfect for if you need something to be shared across multiple sections like a specific example or visual. <br/>
+    All configs, except for ones that execute scripts (libraries & scripts are executed for all parents of the selected section as well as the section itself) 
+    are automatically overriden if they're also present in the child subsection.
+- ### Config ~
+    Config has to start with a ~ on the first character of the line after a section's line or at the very start of a dok file (that's the root config) and 
+    contain these optional attributes which are loaded upon the opening of the section containing them and then another ~ as the first character on the ending line of the config:
+    - **icon**: URL = The icon image used for the tab and sidebar in the top left
+    - **title**: String = The title used for the tab and the sidebar in the top left
+    - **description**: String = The description used for the sidebar in the top left
+    - **libraries**: String[] = Javascript libraries that are JIT ran and 
+        then cached so that they're never run again 
+        with the script elements containing the URL being stored in at the bottom of <head>
+    - **scripts**: String[] = Javascript scripts that are executed every time the section containing them is opened
+    - **meta**: String[] = Search terms for making things easier to search through while still making the title short & concise
+
+    The config should look like this (things wrapped in <> are parameters):
+    ```
+    @ The section that owns the config
+    ~
+        "icon": "<icon URL>",
+        "title": "<title>",
+        "description": "<description>",
+        "libraries": "<libraries>",
+        "scripts": "<scripts>",
+        "meta": "<meta>"
+    ~
+    ```
+    Remember: Not every section needs its own configs and configs don't have to have every parameter
+- ### Import !
+    An import has to be a newline with an ! its first character and simply copies the text from the URL it points to and 
+    replaces the import statement with it. 
+    You can only use imports from the "parent" dok (the one inputted into the URL generator & that EzDok is pointing towards)
+    in order to maintain code readability. <br/>
+    It should be done like this: 
+    ```
+    ! <URL to dok file>
+    ```
+- ### How to not use the config characters
+    If you ever need to place these formatting characters in the same area that they'd be used to format 
+    you can simply place a backslash or invisible space in front of them 
+    (I recommend using a text editor that makes invisible spaces and things like that visibile 
+    even if you don't plan on doing that since some people like to troll with invisible characters and character look-alikes).
+
+@@ Checking for errors
+# Checking for errors
+### Note: All errors are reported in console <br/><br/>
+
+## Invalid Depth
+This happens if you jump in depth like this:
+```dok
+​@ I'm a Section!
+
+​@@@ This is not supposed to happen!
+```
+The error message says "Invalid Depth" and reports the error's location by section
+
+@@ How to optimize for SEO (Search Engine Optimization)!
+# How to optimize for SEO (Search Engine Optimization)
+
+## How to start
+
+Starting is as simple as forking EzDok since you'll have to edit certain small parts of the HTML that the web scrapers of search engines scrape for.
+
+## Replacing the meta, icon, and title
+
+In the default EzDok HTML these are the meta tags, icon, and title <br/>
+Here's what the default Ezdok meta tags, icon, and title look like (they're located in <head>):
+```html
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A simple site for easy documentation :D">
+<meta name="keywords" content="Documentation, Code, Coding, Programming">
+<meta name="author" content="RandomGamingDev">
+
+<link id="icon" rel="icon" href="icon.jpg" type="image/x-icon">
+<title id="title">EzDok</title>
+```
+
+By replacing these, the web scrapers of search engines will be better able to index your site since meta tags are quite important for SEO!
+
+## Adding scrapable content
+In order to optimize for search engines you'll want to place some text in a text element (a `p` for instance) in the HTML 
+containing content that you want the scrapers to be able to index your site off of.
+I recommend simply copying and pasting text from the dok file being pointed to and imported since 
+that contains all of the content in your site in a human readable and easily scrapable format making it perfect for SEO.
+
+@ How EzDok works
+
+@@ Dependencies
+# Dependencies
+
+- ### [Marked 11.0.0](https://marked.js.org/)
+- ### [TailwindCSS + Typography plugin](https://tailwindcss.com/)
+- ### [Flowbite 2.2.0](https://flowbite.com)
+
+@@ Globals
+# Globals
+
+## Constants
+
+- **nl**: This is just used as an abbreviation for the line separator which in this case is newline '\n'
+- **api_version**: The version of the path (the part behind the # in the URL) API being used
+- **doc_url**: The URL to the dok file containing the documentation
+- **path**: The path to a specific section in the documentation
+- **article**: The article element
+- **title**: The title element
+- **icon**: The icon element
+- **sidebar**: The sidebar
+- **searchbar**: The sidebar's searchbar
+- **search_results_container**: The invisible div containing the div that contains the search results
+- **search_results**: The colored div that contains the search results
+- **clear_search_button**: The button used for clearing the searchbar
+- **sections_container**: The part of the navbar that contains the dropdowns and buttons for accessing the sections
+- **sidebar_icon**: The sidebar's icon element
+- **sidebar_title**: The sidebar's title element
+- **sidebar_description**: The sidebar's description element
+
+## Mutables
+
+- **section_tree**: The tree structure containing all of the sections of the documentation
+
+@@ Functions
+# Functions
+
+- **get_url_data() -> [String, String, String]**: Gets the api_version, doc_url, and path in that order based off of the current URL.
+- **GetSection(path: []) -> Section**: Gets the Section that a specific path is referencing. 
+    If the path is of length 0 it iterates down the first subsection of every section until it gets to the last one.
+    Otherwise, it goes down the tree by iterating down the path list and using the indices from the path to travel down the tree.
+
+@@ Classes
+
+@@@ Section
+# Section
+
+## Static Variables
+- **selected**: DOMElement = The element that's currently selected
+- **libraries**: Set<String> = The URLs for the libraries that are already imported (scripts go to the top of the article)
+
+## Instance Variables
+- **parent**: Section = The parent of the section, which is set to null if it's the root section.
+- **id**: String = The ID of the section, which is expected to be formatted like this: section-<path with each index separated by a ->-
+- **title_parsed**: Boolean = Whether or not the title's been parsed
+- **title**: String = The title
+- **config**: Object = The object containing all of the parsed data from the config (parsed as a JSON)
+- **content_parsed**: Boolean = Whether or not the content's been parsed
+- **content**: String = The content
+- **subsections**: Section[] = All the subsections that belong to & inherit from this section
+- **button**: DOMElement = The button on the sidebar that belongs to the section
+- **dropdown**: DOMElement = The dropdown on the sidebar that belongs to the section if it has subsections
+- **div**: DOMElement = The div on the sidebar that belongs to the section and contains all other elements belonging to the section
+- **title_text**: String = The text of the title in pure string form
+
+## Constructor
+**constructor(parent = null, id = null, title = null, config = null, content = null, subsections = [], button = null, dropdown = null, div = null)**
+Sets the values input into it for the parameters seen above, with each parameter corresponding to an instance variable with the same name. <br/>
+If nothing's input into a parameter, it'll get set to null.
+The constructor also sets the title_parsed and content_parsed instance variables to false.
+
+## Instance Methods
+- **fromTxt(txt: String, subsections: Section[] = [], button: DOMElement = null, dropdown: DOMElement = null, div: DOMElement = null) -> this**:
+    Parses the text handed to it from txt into its title, config, and content.
+    the rest of the parameters correspond to their respective instance variables and default values in the same way as the constructor 
+    except for the div & button which will automatically generate a div & button if nothing's entered for them.
+- **add_subsection(subsection: Section)**: Adds a subsection
+- **parsed_title() -> String**: Returns the Markdown parsed title as an HTML String
+- **get_title_text() -> String**: Returns the title as pure text without any HTLM or Markdown formatting
+- **parsed_content() -> String**: Returns the Markdown parsed content as an HTML String
+- **generate_id(element_name: String) -> String**: Generates the ID for a specified element belonging to the section and returns it
+- **generate_div_id() -> String**: Generates the ID for the section's div and returns it
+- **generate_button_id() -> String**: Generates the ID for the section's button and returns it
+- **generate_search_result_id() -> String**: Generates the ID for the section's search_results element and returns it
+- **generate_dropdown_id() -> String**: Generates the ID for the section's dropdown and returns it
+- **generate_div() -> DOMElement**: Generates the section's div and returns it
+- **generate_button() -> DOMElement**: Generates the section's button and returns it
+- **generate_search_result() -> DOMElement**: Generates the section's search result and returns it
+- **generate_dropdown() -> DOMElement**: Generates the section's dropdown and returns it
+- **apply_combined()**: Renders, applies and selects all the parts of the section
+- **set_path_link()**: Sets the URL to point to the section in a way that allows you to move back and forth between sections using the back and forth function of your browser
+- **execute_js()**: Executes the JS of the config's libraries if they haven't been imported already and scripts (they get executed everytime the section gets opened)
+- **search(search)**: Executes a search from this section downwards in the tree
+- **is_dropdown() -> Boolean**: Returns whether or not the section's a dropdown
+- **apply_content()**: Renders the content
+- **apply_config()**: Applies the config
+
+## Static Methods
+- **clear_article_content()**: Clears the article element's content
+- **apply_content(content)**: Renders the content specified
+- **apply_config(config)**: Applies the config specified
+
+@@ Event Listeners
+
+@@@ hashchange
+# hashchange
+
+If the new URL has the same version and URL, hashchange will just render the section the path is pointing to without reloading. <br/>
+If the new URL doesn't have the same version and URL, hashchange will refresh the page and go to the site specified.
+
+@@@ Search
+# Search
+
+- **Search() -> false**: This clears whatever's in the search_results element before 
+    executing a search to repopulate search_results with the results of the new search before it then returns false so that the site doesn't refresh.
+- **SearchTyped()**: This executes at the initiation of the website (in case the browser cached some text in there) and onchange & onkeyup. 
+    It hides the clear_search_button and search_results element when there's nothing in the searchbar. 
+    If there is something in the searchbar it makes the clear_search_button visible
+- **ClearSearch()**: This executes when the clear_search_button is pressed and clears the searchbar and hides the search_results element.

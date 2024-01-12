@@ -1,0 +1,39 @@
+~
+"icon": "icon.jpg",
+"title": "EzDok",
+"description": "A powerful & databaseless ez documentation solution"
+~
+
+@ You've probably made a mistake...
+~
+"scripts": ["/pages/js/generate_url.js"]
+~
+# You've probably made a mistake...
+
+## The URL you entered was invalid
+But don't worry **we can fix this!** <br/>
+
+## How can I fix this?
+Check whether or not a # is in your original URL (you got redirected once we detected the malformed URL) and whether the text after it corresponds to the following format:
+
+```
+<api_version>/"<json_formatted_url>"[/<index0>/<index1>/...]
+```
+
+<details>
+<summary>Wanna know what all of this mumbo jumbo formatting means? Click me!</summary>
+<pre><code>Key:
+    Parameter: <parameter_name>
+    Option: [optional]
+    Repeats: /repeats0/repeats1/repeats2/repeats3...
+Parameters:
+    api_version: The EzDok path API's version
+    json_formatted_url: The URL to the documentation file formatted to work with JSON
+    index(N): The Nth index when traveling down the documentation tree to the section to open
+</code></pre>
+</details>
+
+After you make the fixes needed to get make everything follow the format you should be good!<br/>
+(If you'd like to learn more about how this all works check out the [documentation for EzDok here](#v1/"pages/EzDok.dok"/) :D)<br/>
+
+<div id="ezdok-url-generator"></div>

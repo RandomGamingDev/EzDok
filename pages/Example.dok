@@ -1,0 +1,20 @@
+~
+"icon": "icon.jpg",
+"title": "EzDok",
+"description": "A powerful & databaseless ez documentation solution"
+~
+
+@ EzDok Template
+# Welcome to the EzDok Template!
+## Wanna play Rock, Paper, Scissors with me?
+
+@ Rock, Paper, Scissors
+
+@@ Rock
+# I chose paper. Maybe next time?
+
+@@ Paper
+# I chose scissors. Maybe next time?
+
+@@ Scissors
+# I chose rock. Maybe next time?
