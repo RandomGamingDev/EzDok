@@ -124,7 +124,7 @@ host it somewhere and generate a URL to point to it to document your code!
 ~
 # Quickstart
 ## Create the dok file
-Here's a template so that you can try out EzDok before you learn the basic Markdown-like syntax
+Here's a template so that you can try out EzDok before you learn the basic extended version of the Markdown syntax
 
 ```md
 ~
@@ -155,13 +155,24 @@ Just copy this into a text file of your choosing!
 
 In order for the EzDok site to access the documentation, it's gonna have to be on the internet! <br/>
 While there are many places you can store your documentation, 
-**I recommend storing it alongside your code in your version manager** so you can see the documentation for any version of your code 
-and utilize EzDok's best features! Also, remember that EzDok isn't you and thus can't access private files locked behind a login. 
+**we'll be storing it on a Github Gist for this example**
+, but for actual projects **I recommend storing it alongside your code in your version manager (for instance git)** so you can see the documentation for any version of your code 
+and utilize EzDok's to its fullest! <br/>
+Also, remember that EzDok isn't you and thus can't access private files that are locked behind a login. 
 If you'd like local/private documentation you'll have to host EzDok using an http server (I use `python3 -m http.server` which you can search up how to use) 
-before simply placing the .dok file in the same or a child directory of the directory EzDok's `index.html` is in.<br/>
-After uploading your text file, get the URL to the **raw text file** since that's what EzDok will use for documentation. <br/>
+before simply placing the .dok file in the same or a child directory of the directory EzDok's `index.html` is in. <br/>
 
-For example, on Github which doesn't give you the raw file by default, so you have to click on the `Raw` button
+To upload to Github Gist you can go to https://gist.github.com/ where you can then create a github gist, 
+which by default is set to "Create Secret Gist", which creates a secret gist that can be used for EzDok, but can't be seen on your Github Profile and is the choice we will choose. 
+However, you're welcome to choose to make it public if you'd like. <br/>
+I recommend making the file extension `.dok` so that it's clear what the file does.
+
+<img src="/EzDok/pages/assets/imgs/github-gist.png" alt="An image of Github Gist" width="1000"/>
+
+After uploading your text file, get the URL to the **raw text file** since that's what EzDok will use for documentation.
+
+For example, on Github which doesn't give you the raw file by default, so you have to click on the `Raw` button <br/>
+(This UI's for a Github Repo file, but the same `Raw` button is present on the Github Gist UI at the same spot)
 <img src="/EzDok/pages/assets/imgs/github-get-raw-file.png" alt="How to get the raw file from Github" width="1000"/>
 
 to get sent to the raw version of the text file which should look like this which should be true for all raw text files although the color scheme can differ:
