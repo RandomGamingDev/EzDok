@@ -253,7 +253,9 @@ Want to know how to use all the different features of EzDok? [You can learn how 
         "meta": "<meta>"
     ~
     ```
-    Remember: Every documentation file needs to start with a config even if there's nothing in it, not every section needs its own configs and configs don't have to have every parameter
+    If you're creating an empty config without any of the optional parameters you have to place an empty line inbetween the 2 tildes
+
+    Remember: Every parent/root documentation file needs to start with a config even if there's nothing in it, not every section needs its own configs and configs don't have to have every parameter
 - ### Import !
     An import has to be a newline with an ! its first character and simply copies the text from the URL it points to and 
     replaces the import statement with it. 
