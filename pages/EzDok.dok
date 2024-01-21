@@ -201,7 +201,7 @@ Want to know how to use all the different features of EzDok? [You can learn how 
     If you don't know how to use Markdown you can look at the documentation (here)[https://www.markdownguide.org/getting-started/]
 - ### Section @
     @ declares a section when its on the start of a line with nothing in front of it, and, 
-    if the section is empty you're expected to create an empty line before creating to the next section or the file ending like this:
+    if the section is empty (this includes it being a dropdown with no inheritable content) you're expected to create an empty line before creating to the next section or the file ending like this:
     ```md
     @ My ID is 1 and I'm a Section and I belong to the tree's root!
 
@@ -253,7 +253,7 @@ Want to know how to use all the different features of EzDok? [You can learn how 
         "meta": "<meta>"
     ~
     ```
-    Remember: Not every section needs its own configs and configs don't have to have every parameter
+    Remember: Every documentation file needs to start with a config even if there's nothing in it, not every section needs its own configs and configs don't have to have every parameter
 - ### Import !
     An import has to be a newline with an ! its first character and simply copies the text from the URL it points to and 
     replaces the import statement with it. 
