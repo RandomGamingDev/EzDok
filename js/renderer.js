@@ -1,4 +1,4 @@
-fetch(doc_url)
+fetch(doc_url, { cache: "reload" })
     .then(res => res.text())
     // Get the imports from the preimport text (We only support imports from the parent dok itself)
     .then(preimport_text => {
