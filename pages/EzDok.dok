@@ -121,7 +121,7 @@ host it somewhere and generate a URL to point to it to document your code!
 
 @@ Quickstart
 ~
-"scripts": ["EzDok/pages/js/generate_url.js"]
+"scripts": ["/EzDok/pages/js/generate_url.js"]
 ~
 # Quickstart
 ## Create the dok file
