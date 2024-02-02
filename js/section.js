@@ -319,6 +319,7 @@ class Section {
 
                     // Create and append the script
                     const script_element = document.createElement("script");
+                    script_element.async = false;
                     script_element.src = library;
                     document.head.appendChild(script_element);
                 }
@@ -328,6 +329,7 @@ class Section {
         if (scripts != undefined)
             for (const script of scripts) {
                 const script_element = document.createElement("script");
+                script_element.async = false;
                 script_element.src = script;
                 article.appendChild(script_element);
             }
