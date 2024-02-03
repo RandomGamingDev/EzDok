@@ -1253,6 +1253,10 @@ video {
   max-width: 28rem;
 }
 
+.max-w-px {
+  max-width: 1px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
