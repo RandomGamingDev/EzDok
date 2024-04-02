@@ -277,16 +277,25 @@ class Section {
         // These will contain the combined results (the results from this section and the sections it inherits from)
         let content = this.parsed_content();
         let config = this.config;
-        // Execute the javascript
-        this.execute_js();
+        // Sections to execute the javascript of
+        let to_execs = [];
         for (let node = this.parent; node != null; node = node.parent) {
             // Prepend the stuff from the sections this section inherits from
             content = node.parsed_content() + content;
             // Add the attributes from the node only if they don't already exist in the current config
             config = { ...node.config, ...config };
+
             // Execute the javascript by appending elements containing the code
-            node.execute_js();
+            to_execs.push(node);
         }
+
+        // Execute the javascript from the top down
+        for (let i = to_execs.length - 1; i >= 0; i--) {
+            const to_exec = to_execs[i];
+            to_exec.execute_js();
+        }
+        this.execute_js();
+
         Section.apply_content(content);
         Section.apply_config(config);
     }
